@@ -1,0 +1,54 @@
+========================================================
+  OPPAC Analysis — how to run on a new computer
+========================================================
+
+STEP 1 — COPY THE WHOLE FOLDER
+  Copy this entire "PREANALYSIS" folder to your laptop/PC.
+  Keep the whole folder together (it already includes its own
+  Node.js runtime and all libraries, so nothing else is needed).
+
+  Recommended: C:\PREANALYSIS  (any path is fine, just keep
+  the folder contents intact).
+
+STEP 2 — START IT
+  Double-click  start.bat
+
+  What it does automatically:
+    • uses the bundled Node.js inside the "node" folder
+    • starts the hidden NSE option-chain scraper (writes live
+      NSE data into "data\")
+    • builds the app on the very first run (takes a few minutes)
+    • starts the server on http://localhost:3001
+    • opens your browser for you
+
+STEP 3 — STOP IT
+  Double-click  stop.bat  (stops the server and the scraper).
+
+========================================================
+ REQUIRED on the new computer (all free / built-in)
+========================================================
+  • Windows 10 or 11
+  • Google Chrome OR Microsoft Edge
+      (Edge comes built-in with Windows, so usually nothing to do)
+  • Port 3001 must not be used by another program
+  • Internet access (needs NSE and Yahoo Finance)
+
+Nothing has to be installed first — no Node, no Python, nothing.
+
+========================================================
+ NOTES / TROUBLESHOOTING
+========================================================
+  • The NSE live loop polls nseindia.com every 5 seconds to
+    update the chain. Live numbers appear during market hours.
+    When the market is closed you still see the last real values
+    or a synthetic chain.
+  • If the browser never opens, check  data\server.log  and
+    data\nse-scraper.log  for errors and ask for help with those.
+  • If Windows Firewall asks "Allow Node.js?" click Allow —
+    otherwise only this computer can open the page.
+  • Want to view it from a phone on the same Wi-Fi?
+    http://<this-computer-ip>:3001  (find IP via: ipconfig)
+  • If you remove the "node" folder, start.bat will tell you to
+    install Node.js from https://nodejs.org (v20.9 or newer).
+  • This copy always starts fresh — "data" and the project cache
+    are rebuilt on first run. You can delete "data" any time.
